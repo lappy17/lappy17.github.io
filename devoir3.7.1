@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Calcul du Modulo</title>
+</head>
+<body>
+
+  <h1>Calcul du Modulo (%)</h1>
+
+  <input type="number" id="nombre1" placeholder="Nombre 1">
+  <input type="number" id="nombre2" placeholder="Nombre 2">
+  <button onclick="calculerModulo()">Calculer</button>
+
+  <p id="resultat"></p>
+
+  <script>
+    function calculerModulo() {
+      const n1 = parseInt(document.getElementById("nombre1").value);
+      const n2 = parseInt(document.getElementById("nombre2").value);
+      const resultat = document.getElementById("resultat");
+
+      if (isNaN(n1) || isNaN(n2)) {
+        resultat.textContent = "Veuillez entrer deux nombres valides.";
+      } else if (n2 === 0) {
+        resultat.textContent = "Erreur : Division par zéro.";
+      } else {
+        resultat.textContent = n1 + " % " + n2 + " = " + (n1 % n2);
+      }
+    }
+  </script>
+
+</body>
+</html>
